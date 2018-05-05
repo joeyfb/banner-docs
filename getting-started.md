@@ -2,13 +2,13 @@ Next open up `banners.json` to customize your project. There are two objects you
 
 ### Banners
 
-```json
+```javascript
 "banners": {
   "<banner-name>": {
-    "width": "<banner-width>",
-    "height": "<banner-height>",
-    "orientation": "<banner-orienation>",
-    "static": "<is-banner-static?>"
+    "width": 160,              // Enter Banner Width in Pixels
+    "height": 600,             // Enter Banner Height in Pixels
+    "orientation": "vertical", // Enter either 'horizontal' or 'vertical'
+    "static": true             // Enter either true or false
   }
 }
 ```
@@ -17,7 +17,7 @@ The project structure will be built from this
 
 ### Links
 ```json
-"<link-name">: {
+"<link-name>": {
   "displayName": "<displayed-link-name>",
   "href": "<url-of-link>"
 }
