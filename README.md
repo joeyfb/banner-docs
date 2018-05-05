@@ -1,3 +1,3 @@
 # banner-docs
 
-[Getting Started](getting-started)
+[Getting Started](./getting-started.md)
