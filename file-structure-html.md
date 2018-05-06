@@ -6,12 +6,12 @@ Navigate to `resources/html/pages` to see the HTML entry point for each banner, 
 
 ### Set Banner-Specific Information
 
-```
-{% set banner = "sample-standard-banner" %}
-{% set width = 160 %} 
-{% set height = 600 %}
-{% from "./links.html" import link, closeLink, enabler %}
-```
+
+    {% set banner = "sample-standard-banner" %}
+    {% set width = 160 %} 
+    {% set height = 600 %}
+    {% from "./links.html" import link, closeLink, enabler %}
+
 
 The first three lines are setting properties within the <head> component and adding the name of the banner as a class to the banner-container.
 
