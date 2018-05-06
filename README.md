@@ -5,10 +5,13 @@
 ## Table of Contents
 1. Quick Start
    * [Getting Started](./getting-started.md)
-1. [Updating Banner.json](./-banner.json.md)
-1. [An Important Note About Links](about-links)
-1. [Gulp Tasks Overview](gulp-tasks)
-1. [Getting Started](getting-started)
+   * [Scaffolding](./scaffolding.md)
+   * [Gulp Tasks](./gulp-tasks.md)
+   * [Proper Banner Links](./links.md)
+1. Developing Standard Banners
+1. Developing Static Banners
+1. Developing Expanding Banners
+
 1. File Structure
   1. [File Structure - HTML](file-structure-html)
   1. [File Structure - SCSS](file-structure-scss)
