@@ -6,7 +6,7 @@ Navigate to `resources/html/pages` to see the HTML entry point for each banner, 
 
 ### Set Banner-Specific Information
 
-```html
+```
 {% set banner = "sample-standard-banner" %}
 {% set width = 160 %} 
 {% set height = 600 %}
@@ -19,7 +19,7 @@ The fourth line is importing Macros to build either standard links or doubleclic
 
 ### Extending Layouts
 
-```html
+```
 <!-- In Standard Banners -->
 {% extends "layout.html" %}
 
@@ -32,7 +32,7 @@ The fourth line is importing Macros to build either standard links or doubleclic
 
 These three layout files can all be found within `resources/html/components`. You can edit these files for changes you would like to see across all banners of one type.
 
-```html
+```
 {% block bannerClass %}{% endblock %}
 ```
 As mentioned above, the name of the banner will be added as a class to the outer banner container. If you would like to add any more classes to this <div>, enter them in this block.
@@ -41,15 +41,13 @@ As mentioned above, the name of the banner will be added as a class to the outer
 
 ##### For Standard Banners - Main Content and ISI
 
-```html
+```
 {% block content %}
   {% include './main-content.html' %}
   <!--enter page specific content here-->
 
 {% endblock %}
-```
 
-```html
 {% block isi %}
   {% include './isi.html' %}
 {% endblock %}
@@ -60,7 +58,7 @@ All standard banners will also include the "Important Safety Information" conten
 
 ##### For Static Banners - Main Content
 
-```html
+```
 {% block content %}
   {% include './main-content-static.html' %}
   <!--enter page specific content here-->
@@ -73,7 +71,7 @@ Static banners typically do not include the Important Safety Information, which 
 
 ##### For Expanding Banners - Main Content and ISI Collapsed, Main Content and ISI Expanded
 
-```html
+```
 {% block mainContentCollapsed %}
   {% include './main-content-collapsed.html' %}
   <!--enter page specific content here-->
