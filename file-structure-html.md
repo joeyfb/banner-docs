@@ -45,7 +45,6 @@ As mentioned above, the name of the banner will be added as a class to the outer
 {% block content %}
   {% include './main-content.html' %}
   <!--enter page specific content here-->
-
 {% endblock %}
 
 {% block isi %}
@@ -75,7 +74,6 @@ Static banners typically do not include the Important Safety Information, which 
 {% block mainContentCollapsed %}
   {% include './main-content-collapsed.html' %}
   <!--enter page specific content here-->
-
 {% endblock %}
 
 {% block isiCollapsed %}
@@ -85,7 +83,6 @@ Static banners typically do not include the Important Safety Information, which 
 {% block mainContentExpanded %}
   {% include './main-content-expanded.html' %}
   <!--enter page specific content here-->
-
 {% endblock %}
 
 {% block isiExpanded %}
