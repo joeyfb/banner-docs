@@ -13,8 +13,8 @@
 1. Developing Expanding Banners
 
 1. File Structure
-  1. [File Structure - HTML](file-structure-html)
-  1. [File Structure - SCSS](file-structure-scss)
+  1. [File Structure - HTML](./file-structure-html.md)
+  1. [File Structure - SCSS](./file-structure-scss.md)
   1. File Structure - Javascript
      1. [Standard Banners](file-structure-javascript-standard-banners)
      1. Static Banners
