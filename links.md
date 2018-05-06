@@ -10,15 +10,15 @@ The link name that you pass in should match a <link-name> that you placed in `ba
 
 ### Links for Doubleclick Studio
 
-When you run `gulp develop:doubleclick` or `gulp build:doubleclick` the links will be rendered as "span" elements.
+When you run `gulp develop:doubleclick` or `gulp build:doubleclick` the links will be rendered as "span" elements. Add the class "exit-link" to underline the next and make it inherit the parent element's color (this matches the appearance of an anchor tag). If you are adding the link to an image or container <div>, you typically would not add the "exit-link" class.
 
 ```html
 <!-- The following link -->
 
-{{ link('myCoolLink', 'exit-link awesome-link-class') }}Click Here{{ closeLink() }}
+{{ link('myCoolLink', 'exit-link awesome-class') }}Click Here{{ closeLink() }}
 
 <!-- Will be rendered to -->
-<span class="exit-link awesome-link-class">Click Here</span>
+<span class="exit-link awesome-class">Click Here</span>
 ```
 
 ### Links for Other Platforms
@@ -28,8 +28,8 @@ When your run `gulp develop` or `gulp build` the links will be rendered as ancho
 ```html
 <!-- The following link -->
 
-{{ link('myCoolLink', 'exit-link awesome-link-class') }}Click Here{{ closeLink() }}
+{{ link('myCoolLink', 'exit-link awesome-class') }}Click Here{{ closeLink() }}
 
 <!-- Will be rendered to -->
-<a src="https://www.my-awesome-url.com" target="_blank" class="exit-link awesome-link-class">Click Here</a>
+<a src="http://awesome-url.com" target="_blank" class="exit-link awesome-class">Click Here</a>
 ```
