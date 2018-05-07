@@ -4,19 +4,19 @@
 
 ## Table of Contents
 1. [Quick Start](#1-quick-start)
-   * [1.1: Getting Started](#11-getting-started)
-   * [1.2: Scaffolding](#12-scaffolding)
-   * [1.3: Gulp Tasks](#13-gulp-tasks-overview)
-   * [1.4: Banner Links](#14-banner-links)
+   1. [Getting Started](#11-getting-started)
+   1. [Scaffolding](#12-scaffolding)
+   1. [Gulp Tasks](#13-gulp-tasks-overview)
+   1. [Banner Links](#14-banner-links)
 
 1. [File Structure](#2-file-structure)
-  1. [File Structure - HTML](#21-file-structure---html)
-  1. [File Structure - SCSS](#22-file-structure---scss)
-  1. [File Structure - Javascript](#23-file-structure-javascript)
-     1. [Standard Banners](file-structure-javascript-standard-banners)
-     1. Static Banners
-     1. Expanding Banners
-     1. [ISI](javascript-isi)
+   1. [File Structure - HTML](#21-file-structure---html)
+   1. [File Structure - SCSS](#22-file-structure---scss)
+   1. [File Structure - Javascript](#23-file-structure-javascript)
+      1. [Standard Banners](file-structure-javascript-standard-banners)
+      1. Static Banners
+      1. Expanding Banners
+      1. [ISI](javascript-isi)
 
 
 # 1: Quick Start
