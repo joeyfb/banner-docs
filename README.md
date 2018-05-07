@@ -356,5 +356,42 @@ There is then space to add your banner-specific styles.
 ```
 If you are making an expanding banner, there will be some additional sizing styles for the multiple panels within your file structure. 
 
+## 2.3: File Structure - Javascript
 
+The entry point for each banner's javascript is that banner's specific JS file within `resources/js/pages`. Let's quickly look at this entry point for each type of banner.
 
+### my-standard-banner.js (Standard Banners)
+
+```javascript
+var mainJs = require('../main.js');
+
+window.addEventListener('load', function() {
+	if ($('#main-panel').hasClass('doubleclick')) {
+		function enablerInitHandler() {
+			testLinks();
+
+			if (Enabler.isPageLoaded()) {
+				mainJs();
+			} else {
+				Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, mainJs);
+			}
+		}
+
+		if (Enabler.isInitialized()) {
+			enablerInitHandler();
+		} else {
+			Enabler.addEventListener(studio.events.StudioEvent.INIT, function() {
+				enablerInitHandler();
+			});
+		}
+	} else {
+		mainJs();
+	}
+});
+
+```
+The majority of this code is simply importing `resources/js/main.js` and initializing the HTML5 "Enabler".
+
+When your project is not built for DoubleClick Studio, this file will simply run `resources/js/main.js`. When your project is built for DoubleClick Studio, it will properly initalize the Enabler script, import your configured exit links, and then run `resources/js/main.js`.
+
+If you would like to better understand how the Enabler is initialized and loaded, you can visit DoubleClick's documentation [Here](https://support.google.com/richmedia/answer/2672545?hl=en&ref_topic=2672541&visit_id=1-636613313005899523-3765677550&rd=1)
