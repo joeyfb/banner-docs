@@ -277,3 +277,84 @@ The required structure for an expanding banner is to have one main panel, with a
 
 Often your ISI will be identical on both, which is why both the collapsed ISI block and expanded ISI block are pulling in the same file by default. 
 
+## 2.2: File Structure - SCSS
+
+The entry point for each banner's styles is that banner's specific SCSS file within `resources/scss/pages`. All common SCSS files used by that banner will need to be imported into this file. Let's walk through the file structure by section.
+
+### Import Modules and Oritnetation Styles
+```scss
+@import "../vendor/normalize";
+@import "../modules/all";
+@import "../orientation/vertical";
+```
+First, we will import normalize.scss. This is a commonly used 3rd party stylesheet to help normalize some inconsistencies across browsers.
+
+Second, we will import all of our modules. This could include variables, animations, and other stylesheets that don't directly apply styles to the DOM. By default, several variables will be pulled in from `resources/scss/modules/_variables.scss`. It is good to open up this file to view, edit, and add variables in your project. 
+
+Third, we will import either `resources/scss/orientation/vertical.scss` or `resources/scss/orientation/horizontal`, depending on the banner's orientation. If you open up these files, you will see some additional variables. This is a great place to add or overwrite global variables that are orientation specific. 
+
+### Declare or Re-Declare Banner- Specific Variables
+
+```scss
+/* Alter variables for one specific banner by redefining them here */
+
+
+@import "../partials/all";
+```
+Next you have space to redeclare variables that need banner-specific values. It is important to do this before pulling in all of your partials, because that is where the variables are evaluated.
+
+### Banner-Specific Styles (Standard and Static)
+
+```scss
+#main-panel.sample-expand-on-click-banner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 500px;
+  height: 500px;
+
+  /* Declare banner specific styles here */
+
+
+}
+```
+As you can see, some banner size styles are automatically created during the scaffolding process. 
+
+There is then space to add your banner-specific styles.
+
+### Banner-Specific Styles (Expanding)
+
+```scss
+#main-panel.sample-expand-on-hover-banner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 640px;
+  height: 250px;
+
+  #collapsed-panel {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 320px;
+    height: 250px;
+  }
+
+  #expanded-panel {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 640px;
+    height: 250px;
+  }
+
+  /* Declare banner specific styles here */
+
+
+}
+
+```
+If you are making an expanding banner, there will be some additional sizing styles for the multiple panels within your file structure. 
+
+
+
