@@ -1,2 +1,4 @@
+name: Banner Docs
 theme: jekyll-theme-architect
+markdown: kramdown
 auto: true
