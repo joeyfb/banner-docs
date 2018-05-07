@@ -397,3 +397,41 @@ The majority of this code is simply importing `resources/js/main.js` and initial
 When your project is not built for DoubleClick Studio, this file will simply run `resources/js/main.js`. When your project is built for DoubleClick Studio, it will properly initalize the Enabler script, import your configured exit links, and then run `resources/js/main.js`.
 
 If you would like to better understand how the Enabler is initialized and loaded, you can visit DoubleClick's documentation [Here](https://support.google.com/richmedia/answer/2672545?hl=en&ref_topic=2672541&visit_id=1-636613313005899523-3765677550&rd=1)
+
+### MainJS
+
+```javascript
+var Isi = require('./components/isi.js');
+var IScroll = require('./vendor/iscroll-probe.js');
+
+module.exports = function() {
+  var isi = new Isi(IScroll);
+  // If you dont want an auto-scrolling Isi
+  // Remove this init function 
+  isi.init();
+
+  var animationLoader = (function() {
+    var animator = {};
+    var animationSpeed = 1500;
+      function fadeInScreen1() {
+        $('.screen-1').fadeIn(animationSpeed, function() { 
+          // Do something after screen-1 fades in
+      });
+    }
+      
+    animator.init = function() {
+      fadeInScreen1();
+    }
+
+    return animator;
+  }());
+
+  animationLoader.init();
+}
+```
+
+By default, `resources/js/main.js` is set up with functionality that will be typical on most banner projects. 
+
+First, we will create a new Isi (Important Safety Information) Component using iScroll. 
+
+Next we will build an animationLoader object, return that object, and then fun it's init method. When the animationLoader component is initialized it will run the function fadeInScreen1(), which finds the DOM element with the class ".screen-1" and causes it to fade in. From here you can build out additional methods to be called in sequence. 
