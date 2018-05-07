@@ -12,7 +12,7 @@
 1. [File Structure](#2-file-structure)
    1. [File Structure - HTML](#21-file-structure---html)
    1. [File Structure - SCSS](#22-file-structure---scss)
-   1. [File Structure - Javascript](#23-file-structure-javascript)
+   1. [File Structure - Javascript](#23-file-structure---javascript)
       1. [Standard Banners](file-structure-javascript-standard-banners)
       1. Static Banners
       1. Expanding Banners
@@ -21,27 +21,29 @@
 
 # 1: Quick Start
 
+This quick start guide will give the basic overview of commands and file structure to get you up and running.
+
 ## 1.1: Getting Started
+
+Start by cloning this project and running `npm install`.
 
 Open up `banners.json` to customize your project. There are two objects you will need to update, banners and links.
 
 ### Banners
 
-```javascript
+```
 "banners": {
   "<banner-name>": {
-    "width": 160,              // Enter Banner Width in Pixels
-    "height": 600,             // Enter Banner Height in Pixels
-    "orientation": "vertical", // Enter either 'horizontal' or 'vertical'
-    "static": true             // Enter either true or false
+    "width": <banner-width>,            // Enter Banner Width in Pixels
+    "height": <banner-height>,          // Enter Banner Height in Pixels
+    "orientation": <banner-orientation> // Enter either 'horizontal' or 'vertical'
+    "static": <is-banner-static>        // Enter either true or false
   }
 }
 ```
 
-The project structure will be built from this   
-
 ### Links
-```json
+```
 "<link-name>": {
   "displayName": "<displayed-link-name>",
   "href": "<url-of-link>"
