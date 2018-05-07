@@ -366,27 +366,27 @@ The entry point for each banner's javascript is that banner's specific JS file w
 var mainJs = require('../main.js');
 
 window.addEventListener('load', function() {
-	if ($('#main-panel').hasClass('doubleclick')) {
-		function enablerInitHandler() {
-			testLinks();
+  if ($('#main-panel').hasClass('doubleclick')) {
+    function enablerInitHandler() {
+      testLinks();
 			
-			if (Enabler.isPageLoaded()) {
-				mainJs();
-			} else {
-				Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, mainJs);
-			}
-		}
+      if (Enabler.isPageLoaded()) {
+        mainJs();
+      } else {
+        Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, mainJs);
+      }
+    }
 
-		if (Enabler.isInitialized()) {
-			enablerInitHandler();
-		} else {
-			Enabler.addEventListener(studio.events.StudioEvent.INIT, function() {
-				enablerInitHandler();
-			});
-		}
-	} else {
-		mainJs();
-	}
+    if (Enabler.isInitialized()) {
+      enablerInitHandler();
+    } else {
+      Enabler.addEventListener(studio.events.StudioEvent.INIT, function() {
+        enablerInitHandler();
+      });
+    }
+  } else {
+    mainJs();
+  }
 });
 
 ```
