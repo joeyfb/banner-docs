@@ -369,7 +369,7 @@ window.addEventListener('load', function() {
 	if ($('#main-panel').hasClass('doubleclick')) {
 		function enablerInitHandler() {
 			testLinks();
-
+			
 			if (Enabler.isPageLoaded()) {
 				mainJs();
 			} else {
