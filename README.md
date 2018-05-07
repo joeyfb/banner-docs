@@ -7,11 +7,11 @@
    * 1.1 [Getting Started](#getting-started)
    * 1.2 [Scaffolding](./scaffolding.md)
    * 1.3 [Gulp Tasks](#gulp-tasks-overview)
-   * 1.4 [Proper Banner Links](./links.md)
+   * 1.4 [Proper Banner Links](#14-banner-links)
 
 1. File Structure
-  1. [File Structure - HTML](./file-structure-html.md)
-  1. [File Structure - SCSS](./file-structure-scss.md)
+  1. [File Structure - HTML](#21---file-structure---html)
+  1. [File Structure - SCSS](#22---file-structure---scss)
   1. File Structure - Javascript
      1. [Standard Banners](file-structure-javascript-standard-banners)
      1. Static Banners
@@ -19,9 +19,9 @@
      1. [ISI](javascript-isi)
 
 
-# 1. Quick Start
+# 1: Quick Start
 
-## 1.1 Getting Started
+## 1.1: Getting Started
 
 Open up `banners.json` to customize your project. There are two objects you will need to update, banners and links.
 
@@ -51,7 +51,7 @@ The project structure will be built from this
 Banners deployed to doubleclick studio do not use traditional anchor tags, but handle all linking through javascript. The necessary javascript functions will be built from the information that is provided here.
 
 
-## 1.3 Gulp Tasks Overview
+## 1.3: Gulp Tasks Overview
 
 A quick guide to the various Gulp taks in this framework. If you do not have Gulp globally installed, every task covered here can also be accessed by running `npm run <gulp-task>`.
 
@@ -111,7 +111,7 @@ gulp zip
 ```
 This task will take each folder currently in `dist`, zip it, and place it in `dist/zips`.
 
-## 1.4 Banner Links
+## 1.4: Banner Links
 
 If a banner is going to be deployed on Doubleclick Studio, it does not use anchor tags, but handles everything in Javascript. If the banner is not for Doubleclick Studio, it will have standard anchor tags. This framework is built to have one link syntax which will be rendered as Doubleclick links in one build process and anchor tags in another build process.
 
@@ -147,7 +147,7 @@ When your run `gulp develop` or `gulp build` the links will be rendered as ancho
 <a src="http://awesome-url.com" target="_blank" class="exit-link awesome-class">Click Here</a>
 ```
 
-# 2. File Structure
+# 2: File Structure
 
 ### Overview
 
@@ -169,7 +169,7 @@ The image folder works slightly different. If "my-awesome-banner" was marked as 
 * `resources/img/vertical`
 * `resources/img/pages/my-awesome-banner`.
 
-## 2.1 - File Structure - HTML
+## 2.1: File Structure - HTML
 
 This framework uses Nunjucks Rendering to create HTML files during it's build prcoess. You can learn more about Nunjucks by reading their documentation <a href="https://mozilla.github.io/nunjucks/">here</a>
 
