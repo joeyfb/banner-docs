@@ -151,7 +151,7 @@ When your run `gulp develop` or `gulp build` the links will be rendered as ancho
 
 ### Overview
 
-##### Overview - HTML, SCSS, JS
+#### Overview - HTML, SCSS, JS
 
 The bulk of your development work will be working within the `resources` folder. The entry point for each banner's HTML, SCSS, and Javascript will be that banner's respective self-titled file within the `resources/<html/scss/javascript>/pages` folder.
 
@@ -162,7 +162,7 @@ For example, if you created a banner called `my-awesome-banner`:
 
 Each banner's HTML, SCSS, and Javascript file pulls in common components, but the individual entry point allows you a great deal of customization for each banner when necessary.
 
-##### Overview - Images
+#### Overview - Images
 
 The image folder works slightly different. If "my-awesome-banner" was marked as a "vertical" banner, it would pull in all the images from:
 * `resources/img/shared`
@@ -222,7 +222,7 @@ As mentioned above, the name of the banner will be added as a class to the outer
 
 ### Content Blocks
 
-##### For Standard Banners - Main Content and ISI
+#### For Standard Banners - Main Content and ISI
 
 ```nunjucks
 {% block content %}
@@ -238,7 +238,7 @@ All standard banners will include the content located in `resources/html/compone
 
 All standard banners will also include the "Important Safety Information" content located in `resources/html/components/isi.html`. 
 
-##### For Static Banners - Main Content
+#### For Static Banners - Main Content
 
 ```nunjucks
 {% block content %}
@@ -251,7 +251,7 @@ All static banners will include the content located in `resources/html/component
 
 Static banners typically do not include the Important Safety Information, which is why the "isi" block is excluded by default.
 
-##### For Expanding Banners - Main Content and ISI Collapsed, Main Content and ISI Expanded
+#### For Expanding Banners - Main Content and ISI Collapsed, Main Content and ISI Expanded
 
 ```nunjucks
 {% block mainContentCollapsed %}
