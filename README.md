@@ -16,7 +16,8 @@
       1. [Standard Banners](file-structure-javascript-standard-banners)
       1. Static Banners
       1. Expanding Banners
-      1. [ISI](javascript-isi)
+      1. [main.js](mainJs)
+      1. [isi.js](javascript-isi)
 
 
 # 1: Quick Start
