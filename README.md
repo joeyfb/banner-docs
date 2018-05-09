@@ -13,7 +13,7 @@
    1. [File Structure - HTML](#21-file-structure---html)
    1. [File Structure - SCSS](#22-file-structure---scss)
    1. [File Structure - Javascript](#23-file-structure---javascript)
-      1. [Standard Banners](file-structure-javascript-standard-banners)
+      1. [Standard Banners](standard-banners)
       1. Static Banners
       1. Expanding Banners
       1. [main.js](mainJs)
@@ -363,7 +363,8 @@ If you are making an expanding banner, there will be some additional sizing styl
 
 The entry point for each banner's javascript is that banner's specific JS file within `resources/js/pages`. Let's quickly look at this entry point for each type of banner.
 
-### my-standard-banner.js (Standard Banners)
+### Standard Banners
+ex: my-standard-banner.js
 
 ```javascript
 var mainJs = require('../main.js');
