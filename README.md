@@ -13,11 +13,11 @@
    1. [File Structure - HTML](#21-file-structure---html)
    1. [File Structure - SCSS](#22-file-structure---scss)
    1. [File Structure - Javascript](#23-file-structure---javascript)
-      1. [Standard Banners](standard-banners)
+      1. [Standard Banners](#standard-banners)
       1. Static Banners
       1. Expanding Banners
-      1. [main.js](mainJs)
-      1. [isi.js](javascript-isi)
+      1. [main.js](#mainjs)
+      1. [isi.js](#javascript-isi)
 
 
 # 1: Quick Start
