@@ -1,4 +1,4 @@
-# banner-docs
+# Banner Ad Framework
 
 [Getting Started](./getting-started.md)
 
