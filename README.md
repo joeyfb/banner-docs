@@ -6,7 +6,7 @@
 1. [Quick Start](#1-quick-start)
    1. [Getting Started](#11-getting-started)
    1. [Scaffolding](#12-scaffolding)
-   1. [Gulp Tasks](#13-gulp-tasks-overview)
+   1. [Gulp Tasks](#13-gulp-build-tasks-overview)
    1. [Banner Links](#14-banner-links)
 
 1. [File Structure](#2-file-structure)
@@ -51,24 +51,49 @@ Open up `banners.json` to customize your project. There are two objects you will
 }
 ```
 
-Banners deployed to doubleclick studio do not use traditional anchor tags, but handle all linking through javascript. The necessary javascript functions will be built from the information that is provided here.
+Banners deployed to doubleclick studio do not use traditional anchor tags, but handle all linking through javascript. The necessary javascript functions will be built from the information that is provided here. Links are explained in further details in [Section 1.4](#14-banner-links).
 
+## 1.2: Scaffolding
 
-## 1.3: Gulp Tasks Overview
+After you have fillder out `banners.json` to your project's specifications, there are two scaffolding processes you can run.
 
-A quick guide to the various Gulp taks in this framework. If you do not have Gulp globally installed, every task covered here can also be accessed by running `npm run <gulp-task>`.
-
-### scaffold
 ```
 gulp scaffold
 ```
 This task will build out the file-structure and generate a couple files for you based on the contents of `banner.json`. If you alter the banners object in `banner.json` file and re-run this command, it will build files for the new banners but will not remove any previous banners that were created.
 
-### re-scaffold
 ```
 gulp re-scaffold
 ```
 This task will clear out all the files from `resources/html/pages`, `resources/scss/pages`, `resources/js/pages`, and `resources/img/pages`, and then re-scaffold your project from `banners.json`. Be careful before running this command and double-check you aren't overwriting something you need.
+
+### Understanding and Customizing Scaffolding
+
+To see the scaffolding script, open up `app/tasks/scaffold.js`. Here is a quick overview of what is happening:
+* The *banners* object from `banner.json` is passed as an argument to the scaffolding module. 
+* A For-In loop is run over the *banners* object.
+* Within the For-In loop a large object is created with several dimensions (*dims*) specific to that *banner*. 
+* The scaffoldHTML, scaffoldSCSS, scaffoldJS, and scaffoldIMG functions are called, passing in the specific iteration's banner and banner *dims* object.
+* Each of these scaffold functions selects and reads a template file from `app/templates` based on whether the banner is standard, static, or expanding. 
+* It then takes this template and replaces several placeholder tags in the template with information about the banner from the *dims* object. 
+* The newly written file is then placed in it's respective banner folder within the `resources` directory. 
+* An Exit Links module is built from all of the *links* object in `banner.json` and written to `resources/js/components/exit-links.js`. This module is required and run in all each page's javascript file. 
+* Lastly, a simple index page is created and written to `resources/html/index.html`. 
+
+#### Example
+A banner titled 'banner-banter' would:
+* Create the HTML file `resources/html/pages/banner-banter.html`
+* Create the SCSS file `resources/scss/pages/banner-banter.scss`
+* Create the JS file `resources/js/pages/banner-banter.js`
+* Create the IMG folder `resources/img/pages/banner-banter`
+
+### Note on Scaffolding and Re-Scaffolding
+
+While `gulp scaffold` will not overwrite any HTML, SCSS, Javascript, or Image files within the pages subfolder, it will **always** rewrite `resources/html/index.html` and `resources/js/components/exit-links.js`. This is because it is common to add in additional banners or links when you are half way through a project and always want to ensure the exit links and index file are up to date. 
+
+## 1.3: Gulp Build Tasks Overview
+
+A quick guide to the various Gulp taks in this framework. If you do not have Gulp globally installed, every task covered here can also be accessed by running `npm run <gulp-task>`.
 
 ### develop
 ```
